@@ -11,6 +11,9 @@ endif()
 
 project ("SerializationJSON")
 
+set(JSON_BuildTests OFF CACHE INTERNAL "")
+add_subdirectory(nlohmann_json)
+
 # Добавьте источник в исполняемый файл этого проекта.
 add_executable (SerializationJSON "SerializationJSON.cpp" "SerializationJSON.h")
 
@@ -19,3 +22,4 @@ if (CMAKE_VERSION VERSION_GREATER 3.12)
 endif()
 
 # TODO: Добавьте тесты и целевые объекты, если это необходимо.
+target_link_libraries(SerializationJSON PRIVATE nlohmann_json::nlohmann_json)
