@@ -16,10 +16,22 @@ struct Record {
     bool married;
 };
 
+struct Movie{
+    string country;
+    string date;
+    string studio;
+    string screenwriter;
+    string director;
+    string producer;
+
+};
+
 int main() {
     Record record;
+    Movie movie;
 //    cin >> record.name >> record.famaly >> record.age >> record.married;
 //    ofstream file("record.json");
+    ofstream file("movie.json");
 
 
 //Записать в файл
@@ -40,6 +52,16 @@ int main() {
 //            {"age", record.age},
 //            {"married", record.married}
 //    };
+
+    nlohmann::json _movie = {
+            {"coutry", movie.country},
+            {"date", movie.date},
+            {"studio", movie.studio},
+            {"screenwriter", movie.screenwriter},
+            {"director", movie.director},
+            {"producer", movie.producer}
+    };
+    file << _movie << endl;
 
 //    file << dict;
 
