@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+message Record
+{
+  required string name = 1;
+  required string family = 2;
+  optional int32 age = 3;
+  optional bool married = 4;
+}
+
+//terminal: bin\protoc.exe record.proto --cpp_out=.

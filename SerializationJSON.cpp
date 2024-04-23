@@ -45,14 +45,14 @@ int main() {
 
 //Прочитать из файла
 
-    ifstream file("record.json");
-    nlohmann::json dict;
-    file >> dict;
-    record.name = dict["name"];
-    record.famaly = dict["family"];
-    record.age = dict["age"];
-    record.married = dict["married"];
-    cout << record.name << " " << record.famaly << " " << record.age << " " << record.married << endl;
+//    ifstream file("record.json");
+//    nlohmann::json dict;
+//    file >> dict;
+//    record.name = dict["name"];
+//    record.famaly = dict["family"];
+//    record.age = dict["age"];
+//    record.married = dict["married"];
+//    cout << record.name << " " << record.famaly << " " << record.age << " " << record.married << endl;
 
     return 0;
 }
