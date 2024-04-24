@@ -27,11 +27,13 @@ struct Movie{
 };
 
 int main()  {
+    setlocale(LC_ALL, "rus");
+
     Record record;
     Movie movie;
 //    cin >> record.name >> record.famaly >> record.age >> record.married;
 //    ofstream file("record.json");
-    ofstream file("movie.json");
+    //ofstream file("movie.json");
 
 
 //Записать в файл
@@ -78,10 +80,27 @@ int main()  {
 //    cout << record.name << " " << record.famaly << " " << record.age << " " << record.married << endl;
 
 
-    file << _movie.dump(4); // отступ (dump)
-    file.close();
+    //file << _movie.dump(4); // отступ (dump)
+    //file.close();
 
+
+    ifstream file("movie_database.json");
+    if (!file.is_open()) {
+        cerr << "error file JSON!" << endl;
+        return 1;
+    }
+    nlohmann::json database;
+    file >> database;
+
+    cout << "enter name: ";
+    string actor_name;
+    getline(cin, actor_name);
+
+    for (auto& movie : database.items()) {
+        if (movie.value()["actors"].contains(actor_name)) {
+            cout << "Movie: " << movie.key() << endl;
+            cout << "Role: " << movie.value()["actors"][actor_name] << endl;
+        }
+    }
     return 0;
 }
-
-//второе пока не успеваю займусь вечером!
