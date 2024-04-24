@@ -62,14 +62,7 @@ int main() {
             {"producer", movie.producer = "Леонид Быков"}
     };
 
-    nlohmann::json movie_json = {
-            {"country", movie.country},
-            {"date", movie.date},
-            {"studio", movie.studio},
-            {"screenwriter", movie.screenwriter},
-            {"director", movie.director},
-            {"producer", movie.producer}
-    };
+
 
 //    file << dict;
 
@@ -85,7 +78,7 @@ int main() {
 //    cout << record.name << " " << record.famaly << " " << record.age << " " << record.married << endl;
 
 
-    file << movie_json.dump(4); // отступ (dump)
+    file << _movie.dump(4); // отступ (dump)
     file.close();
 
     return 0;
