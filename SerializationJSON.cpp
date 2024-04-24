@@ -1,4 +1,4 @@
-﻿// SerializationJSON.cpp: определяет точку входа для приложения.
+// SerializationJSON.cpp: определяет точку входа для приложения.
 //
 
 #include "SerializationJSON.h"
@@ -62,14 +62,7 @@ int main() {
             {"producer", movie.producer = "Леонид Быков"}
     };
 
-    nlohmann::json movie_json = {
-            {"country", movie.country},
-            {"date", movie.date},
-            {"studio", movie.studio},
-            {"screenwriter", movie.screenwriter},
-            {"director", movie.director},
-            {"producer", movie.producer}
-    };
+    
 
 //    file << dict;
 
