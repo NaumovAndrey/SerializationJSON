@@ -1,4 +1,4 @@
-﻿// SerializationJSON.cpp: определяет точку входа для приложения.
+// SerializationJSON.cpp: определяет точку входа для приложения.
 //
 
 #include "SerializationJSON.h"
@@ -26,7 +26,7 @@ struct Movie{
 
 };
 
-int main() {
+int main()  {
     Record record;
     Movie movie;
 //    cin >> record.name >> record.famaly >> record.age >> record.married;
