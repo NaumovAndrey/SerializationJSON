@@ -54,14 +54,22 @@ int main() {
 //    };
 
     nlohmann::json _movie = {
-            {"coutry", movie.country},
+            {"coutry", movie.country = "СССР"},
+            {"date", movie.date = "1976"},
+            {"studio", movie.studio = "Киностудия им. А.С. Довженко"},
+            {"screenwriter", movie.screenwriter = "Евгений Оноприенко"},
+            {"director", movie.director = "Леонид Быков"},
+            {"producer", movie.producer = "Леонид Быков"}
+    };
+
+    nlohmann::json movie_json = {
+            {"country", movie.country},
             {"date", movie.date},
             {"studio", movie.studio},
             {"screenwriter", movie.screenwriter},
             {"director", movie.director},
             {"producer", movie.producer}
     };
-    file << _movie << endl;
 
 //    file << dict;
 
@@ -75,6 +83,10 @@ int main() {
 //    record.age = dict["age"];
 //    record.married = dict["married"];
 //    cout << record.name << " " << record.famaly << " " << record.age << " " << record.married << endl;
+
+
+    file << movie_json.dump(4); // отступ (dump)
+    file.close();
 
     return 0;
 }
